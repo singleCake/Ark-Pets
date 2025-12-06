@@ -12,6 +12,8 @@
         <HBox alignment="CENTER_LEFT" spacing="8" styleClass="dialog-title-bar">
             <JFXButton fx:id="backBtn" text="← 返回" prefWidth="78" />
             <Label text="创建语音包" styleClass="dialog-title" />
+            <Region HBox.hgrow="ALWAYS" />
+            <JFXButton fx:id="downloadWikiBtn" text="下载语音" />
         </HBox>
 
         <TextField fx:id="voiceNameInput" promptText="语音包名称" prefWidth="260" />

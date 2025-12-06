@@ -287,6 +287,7 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
                 dialogStage.setResizable(false);
                 cn.harryh.arkpets.controllers.VoiceConfigDialog controller = loader.getController();
                 controller.setStage(dialogStage);
+                    controller.setWikiModelName(selectedModel.nameProperty.get());
                 controller.setOnVoiceSelected(name -> {
                     selectedVoicePack.set(name == null || name.isEmpty() ? "未选择语音包" : name);
                     app.config.character_voice_pack = name;
