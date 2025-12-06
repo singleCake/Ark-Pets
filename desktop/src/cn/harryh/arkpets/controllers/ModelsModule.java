@@ -89,6 +89,8 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
     public SVGPath modelFavoriteIconFill;
     @FXML
     private Button topFavorite;
+    @FXML
+    private Label selectedVoicePackLabel;
 
     @FXML
     private AnchorPane infoPane;
@@ -133,6 +135,7 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
     private final ObservableList<ModelItem> targetList = FXCollections.observableArrayList();
     private ObservableSet<String> filterTagSet = FXCollections.observableSet();
     private boolean filterFavorite;
+    private final StringProperty selectedVoicePack = new SimpleStringProperty("未选择语音包");
 
     private GuiPrefabs.PeerNodeComposer infoPaneComposer;
     private GuiPrefabs.PeerNodeComposer mngBtnComposer;
@@ -252,6 +255,10 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
         selectedModelAppellation.textProperty().bind(selectedModel.appellationProperty);
         selectedModelType.textProperty().bind(selectedModel.typeProperty);
         selectedModelSkinGroupName.textProperty().bind(selectedModel.skinGroupNameProperty);
+        selectedVoicePackLabel.textProperty().bind(selectedVoicePack);
+        if (app.config != null && app.config.character_voice_pack != null && !app.config.character_voice_pack.isEmpty()) {
+            selectedVoicePack.set(app.config.character_voice_pack);
+        }
         GuiPrefabs.addTooltip(selectedModelName, selectedModel.nameProperty);
         GuiPrefabs.addTooltip(selectedModelAppellation, selectedModel.appellationProperty);
         GuiPrefabs.addTooltip(selectedModelType, selectedModel.typeProperty);
@@ -278,6 +285,13 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
                 dialogStage.initOwner(app.stage);
                 dialogStage.initModality(javafx.stage.Modality.WINDOW_MODAL);
                 dialogStage.setResizable(false);
+                cn.harryh.arkpets.controllers.VoiceConfigDialog controller = loader.getController();
+                controller.setStage(dialogStage);
+                controller.setOnVoiceSelected(name -> {
+                    selectedVoicePack.set(name == null || name.isEmpty() ? "未选择语音包" : name);
+                    app.config.character_voice_pack = name;
+                    app.config.save();
+                });
                 dialogStage.show();
             } catch (Exception ex) {
                 ex.printStackTrace();

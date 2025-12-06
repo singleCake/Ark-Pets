@@ -124,6 +124,7 @@
             <Label fx:id="selectedModelName" styleClass="info-primary" text="Name"/>
             <Label fx:id="selectedModelAppellation" styleClass="info-secondary" text="Appellation"/>
             <Label fx:id="selectedModelSkinGroupName" styleClass="info-secondary" text="SkinGroup"/>
+            <Label fx:id="selectedVoicePackLabel" styleClass="info-secondary" text="未选择语音包"/>
         </VBox>
         <VBox AnchorPane.bottomAnchor="0.0" prefWidth="${_infoPaneW}">
             <ScrollPane fx:id="infoPaneTagScroll" prefHeight="100.0" styleClass="flow-wrapper">

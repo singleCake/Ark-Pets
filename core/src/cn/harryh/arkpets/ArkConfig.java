@@ -60,6 +60,8 @@ public class ArkConfig implements Serializable {
     public JSONObject   character_files;
     /** @since ArkPets 2.0 */ @JSONField()
     public String       character_label;
+    /** @since ArkPets 3.11 */ @JSONField()
+    public String       character_voice_pack;
     /** @since ArkPets 1.0 */ @JSONField(defaultValue = "60")
     public int          display_fps;
     /** @since ArkPets 1.0 */ @JSONField(defaultValue = "0")
@@ -122,9 +124,6 @@ public class ArkConfig implements Serializable {
     public boolean      window_style_toolwindow;
     /** @since ArkPets 3.2 */ @JSONField(defaultValue = "true")
     public boolean      window_style_topmost;
-
-    @JSONField(defaultValue = "default")
-    public String       audio_asset;
 
     private ArkConfig() {
     }

@@ -142,9 +142,9 @@ public class ArkChar {
         outlineColor = new Color(Color.CLEAR);
         shadowColor = ArkConfig.getGdxColorFrom(config.render_shadow_color);
         // 7.Audio setup
-        spawnSounds = loadAudioFolder("audio/" + config.audio_asset, "spawn");
-        clickSounds = loadAudioFolder("audio/" + config.audio_asset, "click");
-        dragSounds = loadAudioFolder("audio/" + config.audio_asset, "drag");
+        spawnSounds = loadAudioFolder("audio/" + config.character_voice_pack, "spawn");
+        clickSounds = loadAudioFolder("audio/" + config.character_voice_pack, "click");
+        dragSounds = loadAudioFolder("audio/" + config.character_voice_pack, "drag");
         stageInsertMap = new HashMap<>();
         for (AnimStage stage : animList.clusterByStage().keySet()) {
             // Figure out the suitable canvas size
