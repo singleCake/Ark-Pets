@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 创建语音包弹窗内容 -->
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<StackPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.harryh.arkpets.controllers.VoiceCreateDialog">
+    <VBox spacing="14" alignment="CENTER" styleClass="voice-create-root" prefWidth="460" prefHeight="400">
+        <padding>
+            <Insets top="16" right="18" bottom="16" left="18" />
+        </padding>
+        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="dialog-title-bar">
+            <JFXButton fx:id="backBtn" text="← 返回" prefWidth="78" />
+            <Label text="创建语音包" styleClass="dialog-title" />
+        </HBox>
+
+        <TextField fx:id="voiceNameInput" promptText="语音包名称" prefWidth="260" />
+
+        <HBox spacing="12" alignment="CENTER" prefWidth="420">
+            <VBox spacing="6" prefWidth="130">
+                <Label text="生成语音" styleClass="dialog-section-title" />
+                <JFXListView fx:id="generateListView" prefHeight="140" prefWidth="130" />
+                <JFXButton fx:id="uploadGenerateBtn" text="上传生成语音" prefWidth="130" />
+            </VBox>
+            <VBox spacing="6" prefWidth="130">
+                <Label text="戳动语音" styleClass="dialog-section-title" />
+                <JFXListView fx:id="pokeListView" prefHeight="140" prefWidth="130" />
+                <JFXButton fx:id="uploadPokeBtn" text="上传戳动语音" prefWidth="130" />
+            </VBox>
+            <VBox spacing="6" prefWidth="130">
+                <Label text="拖动语音" styleClass="dialog-section-title" />
+                <JFXListView fx:id="dragListView" prefHeight="140" prefWidth="130" />
+                <JFXButton fx:id="uploadDragBtn" text="上传拖动语音" prefWidth="130" />
+            </VBox>
+        </HBox>
+
+        <JFXButton fx:id="createConfirmBtn" text="创建" prefWidth="160" />
+    </VBox>
+</StackPane>

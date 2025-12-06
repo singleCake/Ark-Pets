@@ -145,6 +145,20 @@
                     <String fx:value="btn-iconified"/>
                 </styleClass>
             </JFXButton>
+            <JFXButton fx:id="modelVoiceConfig" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity"
+                       mnemonicParsing="false" opacity="0.875" prefHeight="25.0" prefWidth="25.0" ripplerFill="gray">
+                <graphic>
+                    <AnchorPane prefHeight="25.0" prefWidth="25.0" translateY="-0.5">
+                        <SVGPath
+                                content="M12 2C9.79 2 8 3.79 8 6V12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12V6C16 3.79 14.21 2 12 2ZM19 11H17C17 14.31 14.31 17 11 17C7.69 17 5 14.31 5 11H3C3 15.42 7.03 19 12 19C16.97 19 21 15.42 21 11H19Z"
+                                fill="#666" scaleX="0.75" scaleY="0.75"/>
+                    </AnchorPane>
+                </graphic>
+                <styleClass>
+                    <String fx:value="btn-plain"/>
+                    <String fx:value="btn-iconified"/>
+                </styleClass>
+            </JFXButton>
             <JFXButton fx:id="modelFavorite" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity"
                        mnemonicParsing="false" opacity="0.875" prefHeight="25.0" prefWidth="25.0" ripplerFill="gray">
                 <graphic>

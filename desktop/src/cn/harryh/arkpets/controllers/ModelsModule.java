@@ -82,6 +82,8 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
     @FXML
     private Button modelWiki;
     @FXML
+    private Button modelVoiceConfig;
+    @FXML
     private Button modelFavorite;
     @FXML
     public SVGPath modelFavoriteIconFill;
@@ -264,6 +266,24 @@ public final class ModelsModule implements Controller<ArkHomeFX> {
         });
         modelWiki.visibleProperty().bind(selectedModel.getHasWikiProperty());
         GuiPrefabs.addTooltip(modelWiki, "Wiki");
+
+        modelVoiceConfig.setOnAction(e -> {
+            try {
+                javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/UI/VoiceConfigDialog.fxml"));
+                javafx.scene.Parent dialogRoot = loader.load();
+                javafx.scene.Scene scene = new javafx.scene.Scene(dialogRoot);
+                javafx.stage.Stage dialogStage = new javafx.stage.Stage();
+                dialogStage.setTitle("语音包配置");
+                dialogStage.setScene(scene);
+                dialogStage.initOwner(app.stage);
+                dialogStage.initModality(javafx.stage.Modality.WINDOW_MODAL);
+                dialogStage.setResizable(false);
+                dialogStage.show();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+        GuiPrefabs.addTooltip(modelVoiceConfig, "配置语音");
 
         modelFavorite.setOnAction(e -> {
             selectedModel.setFavorite(!selectedModel.getFavoriteProperty().get());

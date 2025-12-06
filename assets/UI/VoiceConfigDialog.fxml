@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 语音包选择弹窗 -->
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<StackPane fx:id="root" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.harryh.arkpets.controllers.VoiceConfigDialog">
+    <VBox spacing="14" alignment="CENTER" styleClass="voice-dialog-root" prefWidth="460" prefHeight="380">
+        <padding>
+            <Insets top="16" right="18" bottom="16" left="18" />
+        </padding>
+        <Label text="选择语音包" styleClass="dialog-title" />
+        <JFXListView fx:id="voiceListView" prefHeight="180" />
+        <HBox spacing="18" alignment="CENTER" styleClass="dialog-btn-bar">
+            <JFXButton fx:id="confirmBtn" text="确认选择" prefWidth="120" />
+            <JFXButton fx:id="createBtn" text="创建语音包" prefWidth="120" />
+        </HBox>
+    </VBox>
+</StackPane>
