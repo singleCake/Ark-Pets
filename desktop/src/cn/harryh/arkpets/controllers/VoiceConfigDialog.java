@@ -44,10 +44,20 @@ public class VoiceConfigDialog {
                 javafx.scene.Parent createRoot = loader.load();
                 // 获取当前窗口
                 Stage stage = dialogStage != null ? dialogStage : (Stage) root.getScene().getWindow();
+                
+                // 获取 controller 并设置 stage
+                cn.harryh.arkpets.controllers.VoiceCreateDialog createController = loader.getController();
+                createController.setStage(stage);
+                
+                // 设置包创建完成后返回到列表的回调
+                createController.setOnPackageCreated(() -> {
+                    loadVoicePacks(); // 重新加载语音包列表
+                    stage.getScene().setRoot(root);
+                });
+                
                 stage.getScene().setRoot(createRoot);
 
                 // 绑定返回按钮逻辑
-                cn.harryh.arkpets.controllers.VoiceCreateDialog createController = loader.getController();
                 createController.backBtn.setOnAction(ev -> {
                     stage.getScene().setRoot(root);
                 });
@@ -58,7 +68,7 @@ public class VoiceConfigDialog {
     }
 
     private void loadVoicePacks() {
-        File audioDir = new File("audio");
+        File audioDir = new File("../assets/audio");
         if (!audioDir.exists() || !audioDir.isDirectory()) {
             Logger.warn("VoiceConfig", "audio directory not found: " + audioDir.getPath());
             voiceListView.setPlaceholder(new Label("未找到语音包目录"));
@@ -71,6 +81,9 @@ public class VoiceConfigDialog {
             return;
         }
 
+        // 清空原有列表，避免重复
+        voiceListView.getItems().clear();
+        
         Arrays.stream(names)
                 .sorted(Comparator.naturalOrder())
                 .forEach(voiceListView.getItems()::add);
