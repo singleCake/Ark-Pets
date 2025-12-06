@@ -121,7 +121,7 @@ public class ArkPets extends InputApplicationAdaptor {
 
         // 7.Audio behavior
         try {
-            audioBehavior = new DefaultAudioBehavior();
+            audioBehavior = new DefaultAudioBehavior(cha.spawnSounds, cha.clickSounds, cha.dragSounds);
             audioBehavior.playSpawn(); // Play spawn/reporting voice when pet created
         } catch (Throwable t) {
             Logger.error("Audio", "Failed to initialize audio behavior: " + t.getMessage());

@@ -123,6 +123,9 @@ public class ArkConfig implements Serializable {
     /** @since ArkPets 3.2 */ @JSONField(defaultValue = "true")
     public boolean      window_style_topmost;
 
+    @JSONField(defaultValue = "default")
+    public String       audio_asset;
+
     private ArkConfig() {
     }
 

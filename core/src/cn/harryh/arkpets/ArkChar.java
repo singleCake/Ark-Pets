@@ -17,6 +17,7 @@ import cn.harryh.arkpets.utils.DynamicOrthographicCamara;
 import cn.harryh.arkpets.utils.DynamicOrthographicCamara.Insert;
 import cn.harryh.arkpets.utils.Logger;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.Pixmap.Format;
@@ -27,7 +28,9 @@ import com.badlogic.gdx.utils.SerializationException;
 import com.esotericsoftware.spine.*;
 import com.esotericsoftware.spine.utils.TwoColorPolygonBatch;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static cn.harryh.arkpets.Const.*;
 import static java.io.File.separator;
@@ -55,6 +58,11 @@ public class ArkChar {
     private final AnimationState animationState;
     protected final AnimClipGroup animList;
     protected final HashMap<AnimStage, Insert> stageInsertMap;
+
+    // Audio sounds
+    public final Sound[] spawnSounds;
+    public final Sound[] clickSounds;
+    public final Sound[] dragSounds;
 
     /** Initializes an ArkPets character.
      * @param config The ArkPets Config instance which contains the asset's information and other essential settings.
@@ -133,6 +141,10 @@ public class ArkChar {
         outlineWidth = config.render_outline_width;
         outlineColor = new Color(Color.CLEAR);
         shadowColor = ArkConfig.getGdxColorFrom(config.render_shadow_color);
+        // 7.Audio setup
+        spawnSounds = loadAudioFolder("audio/" + config.audio_asset, "spawn");
+        clickSounds = loadAudioFolder("audio/" + config.audio_asset, "click");
+        dragSounds = loadAudioFolder("audio/" + config.audio_asset, "drag");
         stageInsertMap = new HashMap<>();
         for (AnimStage stage : animList.clusterByStage().keySet()) {
             // Figure out the suitable canvas size
@@ -303,6 +315,41 @@ public class ArkChar {
             throw new RuntimeException("Launch ArkPets failed, failed to compile shaders.");
         }
         return shader;
+    }
+
+    /** Loads audio files from a specific subfolder within the audio asset directory.
+     * @param audioAsset The base audio asset folder name (e.g., "audio_character1").
+     * @param subfolder The subfolder name (e.g., "spawn", "click", "drag").
+     * @return Array of loaded Sound objects, or empty array if folder not found.
+     */
+    private Sound[] loadAudioFolder(String audioAsset, String subfolder) {
+        List<Sound> sounds = new ArrayList<>();
+        try {
+            String folderPath = audioAsset + separator + subfolder;
+            FileHandle folder = Gdx.files.internal(folderPath);
+            if (folder.exists() && folder.isDirectory()) {
+                FileHandle[] files = folder.list();
+                for (FileHandle file : files) {
+                    if (file.extension().equalsIgnoreCase("ogg") || file.extension().equalsIgnoreCase("wav") || file.extension().equalsIgnoreCase("mp3")) {
+                        try {
+                            Sound sound = Gdx.audio.newSound(file);
+                            sounds.add(sound);
+                            Logger.debug("Audio", "Loaded audio: " + file.path());
+                        } catch (Throwable t) {
+                            Logger.error("Audio", "Failed to load audio file: " + file.path() + ", " + t.getMessage());
+                        }
+                    }
+                }
+                if (sounds.isEmpty()) {
+                    Logger.debug("Audio", "No audio files found in: " + folderPath);
+                }
+            } else {
+                Logger.debug("Audio", "Audio folder not found: " + folderPath);
+            }
+        } catch (Throwable t) {
+            Logger.error("Audio", "Failed to load audio folder " + subfolder + ": " + t.getMessage());
+        }
+        return sounds.toArray(new Sound[0]);
     }
 
     private void adjustCanvas(AnimStage stage, int framePerSample, float coverage) {

@@ -1,4 +1,5 @@
 {
+	"audio_asset":"default",
 	"behavior_ai_activation":4,
 	"behavior_allow_interact":true,
 	"behavior_allow_sit":true,
@@ -16,8 +17,8 @@
 	},
 	"character_files":{
 		".atlas":"build_char_421_crow.atlas",
-		".png":"build_char_421_crow.png",
-		".skel":"build_char_421_crow.skel"
+		".skel":"build_char_421_crow.skel",
+		".png":"build_char_421_crow.png"
 	},
 	"character_label":"羽毛笔",
 	"display_fps":60,
