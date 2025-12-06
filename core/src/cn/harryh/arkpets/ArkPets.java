@@ -6,6 +6,7 @@ package cn.harryh.arkpets;
 import cn.harryh.arkpets.animations.AnimClip;
 import cn.harryh.arkpets.animations.AnimData;
 import cn.harryh.arkpets.animations.GeneralBehavior;
+import cn.harryh.arkpets.audio.DefaultAudioBehavior;
 import cn.harryh.arkpets.concurrent.SocketClient;
 import cn.harryh.arkpets.platform.HWndCtrl;
 import cn.harryh.arkpets.platform.WindowSystem;
@@ -35,6 +36,7 @@ public class ArkPets extends InputApplicationAdaptor {
     public ArkConfig config;
     public MemberTrayImpl tray;
     public GeneralBehavior behavior;
+    public DefaultAudioBehavior audioBehavior;
     public TransitionVector2 windowPosition; // Window Position Easing
 
     private HWndCtrl hWndMine;
@@ -47,6 +49,8 @@ public class ArkPets extends InputApplicationAdaptor {
     private int offsetY = 0;
     private boolean isAlwaysTransparent = false;
     private final Cached<Boolean> isFocused;
+    private boolean draggingState = false;
+    private boolean clickCandidate = false;
 
     public ArkPets(String title, ArkConfig appConfig) {
         APP_TITLE = title;
@@ -114,6 +118,14 @@ public class ArkPets extends InputApplicationAdaptor {
 
         // 6.Tray icon setup
         tray = new MemberTrayImpl(this, new SocketClient());
+
+        // 7.Audio behavior
+        try {
+            audioBehavior = new DefaultAudioBehavior();
+            audioBehavior.playSpawn(); // Play spawn/reporting voice when pet created
+        } catch (Throwable t) {
+            Logger.error("Audio", "Failed to initialize audio behavior: " + t.getMessage());
+        }
 
         // Setup complete
         Logger.info("App", "Render");
@@ -192,6 +204,10 @@ public class ArkPets extends InputApplicationAdaptor {
     @Override
     public void dispose() {
         Logger.info("App", "Dispose");
+        try {
+            if (audioBehavior != null) audioBehavior.dispose();
+        } catch (Throwable ignored) {
+        }
     }
 
     /* INTERFACES */
@@ -236,6 +252,8 @@ public class ArkPets extends InputApplicationAdaptor {
             if (getMouseButton() == Input.Buttons.LEFT) {
                 // Left Click: Play the specified animation
                 changeAnimation(behavior.clickStart());
+                // Mark as click candidate; actual click sound will be played on mouse up
+                clickCandidate = true;
                 tray.hideDialog();
             } else if (getMouseButton() == Input.Buttons.RIGHT) {
                 // Right Click: Toggle the menu
@@ -253,6 +271,14 @@ public class ArkPets extends InputApplicationAdaptor {
             plane.changePosition(Gdx.graphics.getDeltaTime(), x, -(cha.camera.getHeight() + y));
             windowPosition.setToEnd();
             tray.hideDialog();
+            // Play dragging/selection sound when drag starts and cancel click candidate
+            try {
+                if (!draggingState) {
+                    draggingState = true;
+                    clickCandidate = false; // cancel pending click sound
+                    if (audioBehavior != null) audioBehavior.playDragging();
+                }
+            } catch (Throwable ignored) {}
         }
     }
 
@@ -284,6 +310,15 @@ public class ArkPets extends InputApplicationAdaptor {
             changeAnimation(behavior.clickEnd());
             tray.hideDialog();
         }
+        // Play click sound if this was a click (not a drag)
+        try {
+            if (clickCandidate && getMouseButton() == Input.Buttons.LEFT) {
+                if (audioBehavior != null) audioBehavior.playClick();
+            }
+        } catch (Throwable ignored) {}
+        clickCandidate = false;
+        // Reset dragging state on mouse up
+        draggingState = false;
     }
 
     @Override

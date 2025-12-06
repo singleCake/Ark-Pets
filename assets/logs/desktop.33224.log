@@ -1,0 +1,40 @@
+# *** ArkPets Log - desktop (PID33224) ***
+# Created: 2025-12-06 00:03:58,514
+# OS: Windows 11 (amd64)
+# Java version: 23.0.1
+# Working directory: D:\Ark-Pets\assets
+
+00:03:58,825 [INFO] System: Entering the app of DesktopLauncher
+00:03:58,837 [INFO] System: ArkPets version is 3.10.0
+00:03:59,446 [INFO] Launcher: Starting
+00:04:00,166 [INFO] Task: FetchAnnounceTask starting
+00:04:00,170 [INFO] Network: Fetching https://arkpets.harryh.cn/p/arkpets/client/api.php?***
+00:04:00,172 [INFO] Launcher: Creating main scene
+00:04:00,858 [INFO] SocketServer: Request to start server
+00:04:00,863 [INFO] Network: Fetched https://arkpets.harryh.cn/p/arkpets/client/api.php?*** , size: 72978
+00:04:00,867 [INFO] SocketServer: Server is running on port 8686
+00:04:00,912 [INFO] HostTray: HostTray icon applied
+00:04:00,912 [INFO] Launcher: Loading modules
+00:04:01,290 [INFO] Task: CheckAppUpdateTask starting
+00:04:01,290 [INFO] Network: Fetching https://arkpets.harryh.cn/p/arkpets/client/api.php?***
+00:04:01,292 [INFO] Launcher: Finished starting
+00:04:01,296 [INFO] ModelManager: Reloading
+00:04:01,428 [INFO] Network: Fetched https://arkpets.harryh.cn/p/arkpets/client/api.php?*** , size: 101
+00:04:01,709 [INFO] ModelManager: Search "" (2367 results, 0.0 ms)
+00:04:01,714 [INFO] ModelManager: Reloaded
+00:04:02,497 [INFO] Task: FetchAnnounceTask completed
+00:04:02,533 [INFO] Announce: Fetched 4 announcements
+00:04:02,536 [INFO] Announce: Need immediate show
+00:04:02,564 [INFO] Task: CheckAppUpdateTask completed
+00:04:02,573 [INFO] Checker: Application version check finished, newest: 3.10.0
+00:04:05,938 [INFO] Launcher: Launching models\421_crow
+00:04:08,173 [INFO] SocketServer: (+)[127.0.0.1:64178] connected
+00:04:08,209 [INFO] SocketServer: (-)[127.0.0.1:64178] closed
+00:04:08,224 [INFO] SocketServer: (+)[127.0.0.1:64179] connected
+00:04:24,545 [INFO] Launcher: User close request
+00:04:24,850 [INFO] Task: DeleteTempFilesTask starting
+00:04:24,853 [INFO] Task: DeleteTempFilesTask completed
+00:04:24,854 [INFO] SocketServer: Request to stop server
+00:04:24,854 [INFO] SocketServer: (-)[127.0.0.1:64179] closed
+00:04:24,854 [INFO] SocketServer: (x)[127.0.0.1:64179] broken
+00:04:24,874 [INFO] System: Exited from DesktopLauncher successfully

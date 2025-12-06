@@ -1,0 +1,108 @@
+# *** ArkPets Log - desktop (PID21160) ***
+# Created: 2025-12-06 00:07:27,890
+# OS: Windows 11 (amd64)
+# Java version: 23.0.1
+# Working directory: D:\Ark-Pets\assets
+
+00:07:28,133 [INFO] System: Entering the app of DesktopLauncher
+00:07:28,142 [INFO] System: ArkPets version is 3.10.0
+00:07:28,143 [DEBUG] System: Default charset is UTF-8
+00:07:28,692 [INFO] Launcher: Starting
+00:07:29,129 [DEBUG] Config: Config saved
+00:07:29,336 [INFO] Task: FetchAnnounceTask starting
+00:07:29,341 [INFO] Network: Fetching https://arkpets.harryh.cn/p/arkpets/client/api.php?***
+00:07:29,342 [INFO] Launcher: Creating main scene
+00:07:29,595 [DEBUG] Launcher: Window on shown
+00:07:30,079 [INFO] SocketServer: Request to start server
+00:07:30,092 [INFO] SocketServer: Server is running on port 8686
+00:07:30,140 [INFO] HostTray: HostTray icon applied
+00:07:30,140 [INFO] Launcher: Loading modules
+00:07:30,467 [ERROR] Config: Config saving failed, details see below.
+java.io.IOException: Cannot delete file:D:\Ark-Pets\assets\ArkPetsConfig.json
+	at cn.harryh.arkpets.utils.IOUtils$FileUtil.writeByte(IOUtils.java:60)
+	at cn.harryh.arkpets.utils.IOUtils$FileUtil.writeString(IOUtils.java:77)
+	at cn.harryh.arkpets.ArkConfig.save(ArkConfig.java:134)
+	at cn.harryh.arkpets.controllers.SettingsModule.lambda$initConfigAdvanced$16(SettingsModule.java:356)
+	at com.sun.javafx.binding.ExpressionHelper$Generic.fireValueChangedEvent(ExpressionHelper.java:348)
+	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80)
+	at javafx.beans.property.ObjectPropertyBase.fireValueChangedEvent(ObjectPropertyBase.java:106)
+	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113)
+	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147)
+	at javafx.scene.control.ComboBoxBase.setValue(ComboBoxBase.java:151)
+	at javafx.scene.control.ComboBox.updateValue(ComboBox.java:516)
+	at javafx.scene.control.ComboBox$3.changed(ComboBox.java:499)
+	at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:181)
+	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80)
+	at javafx.beans.property.ReadOnlyObjectPropertyBase.fireValueChangedEvent(ReadOnlyObjectPropertyBase.java:80)
+	at javafx.beans.property.ReadOnlyObjectWrapper.fireValueChangedEvent(ReadOnlyObjectWrapper.java:102)
+	at javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:113)
+	at javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147)
+	at javafx.scene.control.SelectionModel.setSelectedItem(SelectionModel.java:105)
+	at javafx.scene.control.ComboBox$ComboBoxSelectionModel.lambda$new$0(ComboBox.java:556)
+	at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:136)
+	at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:80)
+	at javafx.beans.property.ReadOnlyIntegerPropertyBase.fireValueChangedEvent(ReadOnlyIntegerPropertyBase.java:78)
+	at javafx.beans.property.ReadOnlyIntegerWrapper.fireValueChangedEvent(ReadOnlyIntegerWrapper.java:102)
+	at javafx.beans.property.IntegerPropertyBase.markInvalid(IntegerPropertyBase.java:114)
+	at javafx.beans.property.IntegerPropertyBase.set(IntegerPropertyBase.java:148)
+	at javafx.scene.control.SelectionModel.setSelectedIndex(SelectionModel.java:69)
+	at javafx.scene.control.SingleSelectionModel.updateSelectedIndex(SingleSelectionModel.java:215)
+	at javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:149)
+	at javafx.scene.control.SingleSelectionModel.select(SingleSelectionModel.java:124)
+	at cn.harryh.arkpets.controllers.SettingsModule.initConfigAdvanced(SettingsModule.java:369)
+	at cn.harryh.arkpets.controllers.SettingsModule.initializeWith(SettingsModule.java:144)
+	at cn.harryh.arkpets.controllers.SettingsModule.initializeWith(SettingsModule.java:43)
+	at cn.harryh.arkpets.utils.FXMLHelper$LoadFXMLResult.initializeWith(FXMLHelper.java:60)
+	at cn.harryh.arkpets.ArkHomeFX.lambda$start$3(ArkHomeFX.java:126)
+	at cn.harryh.arkpets.controllers.RootModule.lambda$popSplashScreen$4(RootModule.java:141)
+	at javafx.animation.Animation.runHandler(Animation.java:1102)
+	at javafx.animation.Animation.play(Animation.java:1005)
+	at javafx.animation.Animation.playFromStart(Animation.java:954)
+	at cn.harryh.arkpets.utils.GuiPrefabs.fadeInNode(GuiPrefabs.java:86)
+	at cn.harryh.arkpets.controllers.RootModule.popSplashScreen(RootModule.java:140)
+	at cn.harryh.arkpets.ArkHomeFX.start(ArkHomeFX.java:88)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:847)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:484)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:457)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:456)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:184)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+00:07:30,475 [DEBUG] Config: Auto-startup is unavailable.
+00:07:30,479 [INFO] Task: CheckAppUpdateTask starting
+00:07:30,480 [INFO] Network: Fetching https://arkpets.harryh.cn/p/arkpets/client/api.php?***
+00:07:30,482 [INFO] Launcher: Finished starting
+00:07:30,486 [INFO] ModelManager: Reloading
+00:07:30,834 [DEBUG] ModelManager: Initialized model dataset successfully.
+00:07:30,940 [DEBUG] ModelManager: Initialized model assets successfully.
+00:07:30,951 [INFO] ModelManager: Search "" (2367 results, 0.0 ms)
+00:07:30,956 [INFO] ModelManager: Reloaded
+00:07:41,205 [INFO] Network: Fetched https://arkpets.harryh.cn/p/arkpets/client/api.php?*** , size: 101
+00:07:41,206 [INFO] Task: CheckAppUpdateTask completed
+00:07:41,240 [INFO] Checker: Application version check finished, newest: 3.10.0
+00:07:41,251 [INFO] Network: Fetched https://arkpets.harryh.cn/p/arkpets/client/api.php?*** , size: 72978
+00:07:41,253 [INFO] Task: FetchAnnounceTask completed
+00:07:41,286 [INFO] Announce: Fetched 4 announcements
+00:07:41,288 [INFO] Announce: Need immediate show
+00:07:51,832 [DEBUG] Config: Config saved
+00:07:52,001 [INFO] Launcher: Launching models\421_crow
+00:07:52,002 [DEBUG] Launcher: With args [--debug]
+00:07:54,714 [INFO] SocketServer: (+)[127.0.0.1:64372] connected
+00:07:54,737 [DEBUG] SocketSession: <- [127.0.0.1:64372] {"operation":"HANDSHAKE_REQUEST","uuid":"c0534ade-7823-4fe7-997a-4b15b30db05d"}
+00:07:54,746 [DEBUG] SocketSession: -> [127.0.0.1:64372] {"operation":"HANDSHAKE_RESPONSE","uuid":"c0534ade-7823-4fe7-997a-4b15b30db05d"}
+00:07:54,747 [INFO] SocketServer: (-)[127.0.0.1:64372] closed
+00:07:54,757 [INFO] SocketServer: (+)[127.0.0.1:64373] connected
+00:07:54,767 [DEBUG] SocketSession: <- [127.0.0.1:64373] {"msg":{"bytes":[-25,-66,-67,-26,-81,-101,-25,-84,-108],"encoding":"UTF-8"},"operation":"LOGIN","uuid":"ac0cd3ff-f9d4-4b63-b703-52310a44bf91"}
+00:09:54,500 [INFO] Launcher: User close request
+00:09:54,818 [INFO] Task: DeleteTempFilesTask starting
+00:09:54,823 [INFO] Task: DeleteTempFilesTask completed
+00:09:54,823 [DEBUG] SocketSession: -> [127.0.0.1:64373] {"operation":"LOGOUT","uuid":"29f01344-4904-48fe-96ba-e4ff8e9bdf58"}
+00:09:54,823 [INFO] SocketServer: Request to stop server
+00:09:54,824 [INFO] SocketServer: (-)[127.0.0.1:64373] closed
+00:09:54,824 [DEBUG] SocketSession: x- [127.0.0.1:64373] (Socket closed)
+00:09:54,824 [DEBUG] Launcher: Finished stopping
+00:09:54,824 [INFO] SocketServer: (x)[127.0.0.1:64373] broken
+00:09:54,843 [DEBUG] Launcher: Window on hidden
+00:09:54,847 [INFO] System: Exited from DesktopLauncher successfully

@@ -1,0 +1,23 @@
+# *** ArkPets Log - core (PID34236) ***
+# Created: 2025-12-06 00:02:47,508
+# OS: Windows 11 (amd64)
+# Java version: 23.0.1
+# Working directory: D:\Ark-Pets\assets
+
+00:02:47,526 [INFO] System: Entering the app of EmbeddedLauncher
+00:02:47,539 [INFO] System: ArkPets version is 3.10.0
+00:02:47,542 [INFO] System: Using USER32 Window System
+00:02:47,545 [INFO] System: Using ANGLE renderer
+00:02:48,323 [INFO] App: Create with title "ArkPets"
+00:02:48,324 [INFO] App: Using model asset "models\421_crow"
+00:02:48,456 [INFO] Character: Skeleton loading as binary
+00:02:48,753 [INFO] Character: AnimStage C0 using DynamicOrthographicCamara 152*146 {Insert: ^-4174 v0 <-2080 >-2088}
+00:02:48,756 [INFO] Animation: Available animation stages [AnimStage C0]
+00:02:49,288 [INFO] SocketClient: Connecting to server on port 8686
+00:02:49,293 [INFO] SocketClient: (+)[127.0.0.1:8686] connected
+00:02:49,293 [INFO] MemberTray: Integrated tray service connected
+00:02:49,308 [INFO] App: Render
+00:03:21,955 [INFO] MemberTray: Request to exit
+00:03:21,964 [INFO] SocketClient: (-)[127.0.0.1:8686] closed
+00:03:22,274 [INFO] App: Dispose
+00:03:22,307 [INFO] System: Exited from EmbeddedLauncher successfully

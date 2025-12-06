@@ -1,0 +1,78 @@
+# *** ArkPets Log - core (PID34208) ***
+# Created: 2025-12-06 00:14:53,571
+# OS: Windows 11 (amd64)
+# Java version: 23.0.1
+# Working directory: D:\Ark-Pets\assets
+
+00:14:53,592 [INFO] System: Enable the debug feature
+00:14:53,607 [INFO] System: Entering the app of EmbeddedLauncher
+00:14:53,607 [INFO] System: ArkPets version is 3.10.0
+00:14:53,608 [DEBUG] System: Default charset is UTF-8
+00:14:53,610 [INFO] System: Using USER32 Window System
+00:14:53,613 [INFO] System: Using ANGLE renderer
+00:14:54,955 [INFO] App: Create with title "ArkPets"
+00:14:54,955 [DEBUG] App: OpenGL version is OpenGL ES 3.0.0 (ANGLE 2.1.16862 git hash: d3764f080f6c)
+00:14:54,955 [DEBUG] App: OpenGL vendor is Google Inc. (NVIDIA)
+00:14:54,958 [INFO] App: Using model asset "models\421_crow"
+00:14:55,071 [DEBUG] Shader: Shader program compiled
+00:14:55,079 [INFO] Character: Skeleton loading as binary
+00:14:55,120 [DEBUG] Character: Skeleton loaded with Spine version 3.8.99
+00:14:55,181 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>}
+00:14:55,181 [DEBUG] Animation: Apply AnimData {AnimClip "Move" C0 <MOVE>}
+00:14:55,181 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>}
+00:14:55,181 [DEBUG] Animation: Apply AnimData {AnimClip "Sit" C0 <SIT>}
+00:14:55,181 [DEBUG] Animation: Apply AnimData {AnimClip "Sleep" C0 <SLEEP>}
+00:14:55,184 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>}
+00:14:55,191 [DEBUG] Animation: Apply AnimData {AnimClip "Move" C0 <MOVE>}
+00:14:55,194 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>}
+00:14:55,201 [DEBUG] Animation: Apply AnimData {AnimClip "Sit" C0 <SIT>}
+00:14:55,211 [DEBUG] Animation: Apply AnimData {AnimClip "Sleep" C0 <SLEEP>}
+00:14:55,840 [INFO] Character: AnimStage C0 using DynamicOrthographicCamara 152*146 {Insert: ^-4174 v0 <-2080 >-2088}
+00:14:55,843 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:14:55,843 [INFO] Animation: Available animation stages [AnimStage C0]
+00:14:56,349 [INFO] SocketClient: Connecting to server on port 8686
+00:14:56,351 [INFO] SocketClient: (+)[127.0.0.1:8686] connected
+00:14:56,351 [INFO] MemberTray: Integrated tray service connected
+00:14:56,359 [DEBUG] SocketSession: -> [127.0.0.1:8686] {"msg":{"bytes":[-25,-66,-67,-26,-81,-101,-25,-84,-108],"encoding":"UTF-8"},"operation":"LOGIN","uuid":"9af2dd50-ebdb-418e-ae06-77257ecaa074"}
+00:14:56,416 [DEBUG] Audio: Loaded sound: audio/spawn.ogg
+00:14:56,426 [DEBUG] Audio: Loaded sound: audio/click.ogg
+00:14:56,451 [DEBUG] Audio: Loaded sound: audio/drag.ogg
+00:14:56,452 [INFO] App: Render
+00:14:56,452 [DEBUG] Window: Resized to 150 * 150
+00:14:56,483 [DEBUG] Window: Resized to 152 * 146
+00:14:57,826 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>} Strict
+00:14:59,343 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:14:59,460 [DEBUG] Input: Click+ Btn 0 @ 84, 59
+00:14:59,543 [DEBUG] Input: Click- Btn 0 @ 84, 59
+00:14:59,544 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>} Strict
+00:15:01,060 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:15:01,392 [DEBUG] Input: Click+ Btn 0 @ 76, 63
+00:15:01,493 [DEBUG] Input: Click- Btn 0 @ 76, 63
+00:15:01,494 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>} Strict
+00:15:02,460 [DEBUG] Input: Click+ Btn 0 @ 63, 62
+00:15:02,993 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:15:03,377 [DEBUG] Input: Click- Btn 0 @ 63, 57
+00:15:03,894 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>} Strict
+00:15:05,426 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:15:05,826 [DEBUG] Input: Click+ Btn 0 @ 78, 56
+00:15:06,859 [DEBUG] Input: Click- Btn 0 @ 78, 51
+00:15:07,376 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>} Strict
+00:15:08,892 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:15:09,243 [DEBUG] Input: Click+ Btn 0 @ 72, 57
+00:15:09,326 [DEBUG] Input: Click- Btn 0 @ 72, 57
+00:15:09,327 [DEBUG] Animation: Apply AnimData {AnimClip "Interact" C0 <INTERACT>} Strict
+00:15:10,826 [DEBUG] Animation: Apply AnimData {AnimClip "Relax" C0 <IDLE>} Loop
+00:15:11,260 [DEBUG] Animation: Apply AnimData {AnimClip "Sit" C0 <SIT>} Loop
+00:15:15,293 [DEBUG] Input: Click+ Btn 1 @ 79, 50
+00:15:15,374 [DEBUG] MemberTray: Shown @ 507, 874
+00:15:15,383 [DEBUG] Input: Click- Btn 1 @ 79, 50
+00:15:15,383 [DEBUG] Input: Click- Btn 1 @ 79, 50
+00:15:16,145 [DEBUG] SocketSession: -> [127.0.0.1:8686] {"operation":"LOGOUT","uuid":"9af2dd50-ebdb-418e-ae06-77257ecaa074"}
+00:15:16,145 [INFO] MemberTray: Request to exit
+00:15:16,146 [DEBUG] SocketSession: x- [127.0.0.1:8686]
+00:15:16,146 [INFO] SocketClient: (x)[127.0.0.1:8686] broken
+00:15:16,146 [INFO] MemberTray: Integrated tray service disconnected
+00:15:16,147 [INFO] SocketClient: (-)[127.0.0.1:8686] closed
+00:15:16,188 [INFO] MemberTray: Isolated tray icon applied
+00:15:16,451 [INFO] App: Dispose
+00:15:16,497 [INFO] System: Exited from EmbeddedLauncher successfully

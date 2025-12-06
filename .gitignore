@@ -24,3 +24,10 @@ test*/
 /ArkPetsConfig.json
 /models_data.json
 /*.log
+
+# Exclude Resources files
+assets/models/
+assets/models_enemies/
+assets/models_illust/
+assets/models_data.json
+assets/audio/

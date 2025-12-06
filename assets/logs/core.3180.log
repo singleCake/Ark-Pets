@@ -1,0 +1,30 @@
+# *** ArkPets Log - core (PID3180) ***
+# Created: 2025-12-05 22:36:46,924
+# OS: Windows 11 (amd64)
+# Java version: 23.0.1
+# Working directory: D:\Ark-Pets\assets
+
+22:36:46,945 [INFO] System: Entering the app of EmbeddedLauncher
+22:36:46,958 [INFO] System: ArkPets version is 3.10.0
+22:36:46,960 [INFO] System: Using USER32 Window System
+22:36:46,962 [INFO] System: Using ANGLE renderer
+22:36:47,741 [INFO] App: Create with title "ArkPets (4)"
+22:36:47,742 [INFO] App: Using model asset "models\421_crow"
+22:36:47,887 [INFO] Character: Skeleton loading as binary
+22:36:48,216 [INFO] Character: AnimStage C0 using DynamicOrthographicCamara 152*146 {Insert: ^-4174 v0 <-2080 >-2088}
+22:36:48,218 [INFO] Animation: Available animation stages [AnimStage C0]
+22:36:48,732 [INFO] SocketClient: Connecting to server on port 8686
+22:36:48,737 [INFO] SocketClient: (+)[127.0.0.1:8686] connected
+22:36:48,737 [INFO] MemberTray: Integrated tray service connected
+22:36:48,745 [INFO] App: Render
+22:48:16,080 [INFO] MemberTray: Transparent enabled
+22:57:21,791 [INFO] MemberTray: Transparent disabled
+23:10:35,433 [INFO] MemberTray: Transparent enabled
+23:20:46,821 [INFO] MemberTray: Transparent disabled
+23:31:36,972 [INFO] MemberTray: Request to exit
+23:31:36,975 [INFO] SocketClient: (x)[127.0.0.1:8686] broken
+23:31:36,975 [INFO] MemberTray: Integrated tray service disconnected
+23:31:36,977 [INFO] SocketClient: (-)[127.0.0.1:8686] closed
+23:31:37,009 [INFO] MemberTray: Isolated tray icon applied
+23:31:37,293 [INFO] App: Dispose
+23:31:37,365 [INFO] System: Exited from EmbeddedLauncher successfully

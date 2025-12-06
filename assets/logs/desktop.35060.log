@@ -1,0 +1,41 @@
+# *** ArkPets Log - desktop (PID35060) ***
+# Created: 2025-12-06 00:02:36,794
+# OS: Windows 11 (amd64)
+# Java version: 23.0.1
+# Working directory: D:\Ark-Pets\assets
+
+00:02:37,018 [INFO] System: Entering the app of DesktopLauncher
+00:02:37,029 [INFO] System: ArkPets version is 3.10.0
+00:02:37,640 [INFO] Launcher: Starting
+00:02:38,536 [INFO] Task: FetchAnnounceTask starting
+00:02:38,539 [INFO] Network: Fetching https://arkpets.harryh.cn/p/arkpets/client/api.php?***
+00:02:38,540 [INFO] Launcher: Creating main scene
+00:02:39,262 [INFO] SocketServer: Request to start server
+00:02:39,270 [INFO] SocketServer: Server is running on port 8686
+00:02:39,323 [INFO] HostTray: HostTray icon applied
+00:02:39,323 [INFO] Launcher: Loading modules
+00:02:39,748 [INFO] Task: CheckAppUpdateTask starting
+00:02:39,748 [INFO] Network: Fetching https://arkpets.harryh.cn/p/arkpets/client/api.php?***
+00:02:39,750 [INFO] Launcher: Finished starting
+00:02:39,756 [INFO] ModelManager: Reloading
+00:02:39,968 [INFO] Network: Fetched https://arkpets.harryh.cn/p/arkpets/client/api.php?*** , size: 101
+00:02:40,198 [INFO] ModelManager: Search "" (2367 results, 0.0 ms)
+00:02:40,203 [INFO] ModelManager: Reloaded
+00:02:40,320 [INFO] Network: Fetched https://arkpets.harryh.cn/p/arkpets/client/api.php?*** , size: 72978
+00:02:41,100 [INFO] Task: CheckAppUpdateTask completed
+00:02:41,128 [INFO] Checker: Application version check finished, newest: 3.10.0
+00:02:41,128 [INFO] Task: FetchAnnounceTask completed
+00:02:41,150 [INFO] Announce: Fetched 4 announcements
+00:02:41,152 [INFO] Announce: Need immediate show
+00:02:46,987 [INFO] Launcher: Launching models\421_crow
+00:02:49,239 [INFO] SocketServer: (+)[127.0.0.1:64129] connected
+00:02:49,275 [INFO] SocketServer: (-)[127.0.0.1:64129] closed
+00:02:49,289 [INFO] SocketServer: (+)[127.0.0.1:64130] connected
+00:03:21,484 [INFO] HostTray: Request to exit
+00:03:21,642 [INFO] Launcher: User close request
+00:03:21,948 [INFO] Task: DeleteTempFilesTask starting
+00:03:21,953 [INFO] Task: DeleteTempFilesTask completed
+00:03:21,954 [INFO] SocketServer: Request to stop server
+00:03:21,955 [INFO] SocketServer: (x)[127.0.0.1:64130] broken
+00:03:21,955 [INFO] SocketServer: (-)[127.0.0.1:64130] closed
+00:03:21,958 [INFO] System: Exited from DesktopLauncher successfully
