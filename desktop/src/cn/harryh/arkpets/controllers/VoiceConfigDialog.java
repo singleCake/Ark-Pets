@@ -79,7 +79,7 @@ public class VoiceConfigDialog {
     }
 
     private void loadVoicePacks() {
-        File audioDir = new File("../assets/audio");
+        File audioDir = new File("audio");
         if (!audioDir.exists() || !audioDir.isDirectory()) {
             Logger.warn("VoiceConfig", "audio directory not found: " + audioDir.getPath());
             voiceListView.setPlaceholder(new Label("未找到语音包目录"));

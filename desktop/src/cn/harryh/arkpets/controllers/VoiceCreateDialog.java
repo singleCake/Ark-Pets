@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import com.jfoenix.controls.JFXListView;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ListCell;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser;
@@ -82,6 +83,11 @@ public class VoiceCreateDialog {
         pokeListView.setItems(pokeFiles);
         dragListView.setItems(dragFiles);
 
+        // 只显示文件名
+        setupNameOnlyCell(generateListView);
+        setupNameOnlyCell(pokeListView);
+        setupNameOnlyCell(dragListView);
+
         generateListView.setPlaceholder(new javafx.scene.control.Label("暂无生成语音"));
         pokeListView.setPlaceholder(new javafx.scene.control.Label("暂无戳动语音"));
         dragListView.setPlaceholder(new javafx.scene.control.Label("暂无拖动语音"));
@@ -98,6 +104,9 @@ public class VoiceCreateDialog {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("选择" + typeLabel + "语音文件");
         fileChooser.getExtensionFilters().add(
+            new FileChooser.ExtensionFilter("WAV音频文件", "*.wav")
+        );
+        fileChooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("OGG音频文件", "*.ogg")
         );
         fileChooser.getExtensionFilters().add(
@@ -111,7 +120,7 @@ public class VoiceCreateDialog {
             if (selectedFiles != null) {
                 for (File file : selectedFiles) {
                     String fileName = file.getName();
-                    String entry = fileName;
+                    String entry = fileName + "|" + file.getAbsolutePath();
                     if (!targetList.contains(entry)) {
                         targetList.add(entry);
                         Logger.debug("VoiceCreate", "Added file: " + fileName);
@@ -139,7 +148,7 @@ public class VoiceCreateDialog {
             return;
         }
 
-        File voicePackDir = new File("../assets/audio/" + voiceName);
+        File voicePackDir = new File("audio/" + voiceName);
         Logger.debug("VoiceCreate", "Creating voice pack at: " + voicePackDir.getAbsolutePath());
         
         if (voicePackDir.exists()) {
@@ -157,9 +166,9 @@ public class VoiceCreateDialog {
             boolean clickCreated = clickDir.mkdirs();
             boolean dragCreated = dragDir.mkdirs();
             
-            Logger.debug("VoiceCreate", "spawn dir created: " + spawnCreated + " at " + spawnDir.getAbsolutePath());
-            Logger.debug("VoiceCreate", "click dir created: " + clickCreated + " at " + clickDir.getAbsolutePath());
-            Logger.debug("VoiceCreate", "drag dir created: " + dragCreated + " at " + dragDir.getAbsolutePath());
+            Logger.info("VoiceCreate", "spawn dir created: " + spawnCreated + " at " + spawnDir.getAbsolutePath());
+            Logger.info("VoiceCreate", "click dir created: " + clickCreated + " at " + clickDir.getAbsolutePath());
+            Logger.info("VoiceCreate", "drag dir created: " + dragCreated + " at " + dragDir.getAbsolutePath());
 
             copyVoiceFiles(generateFiles, spawnDir);
             copyVoiceFiles(pokeFiles, clickDir);
@@ -210,6 +219,21 @@ public class VoiceCreateDialog {
                 }
             }
         }
+    }
+
+    private void setupNameOnlyCell(JFXListView<String> listView) {
+        listView.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    String[] parts = item.split("\\|", 2);
+                    setText(parts[0]);
+                }
+            }
+        });
     }
 
     public void setStage(Stage dialogStage) {

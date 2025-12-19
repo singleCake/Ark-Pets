@@ -20,7 +20,7 @@
 		".skel":"build_char_421_crow.skel"
 	},
 	"character_label":"羽毛笔",
-	"character_voice_pack":"LaPluma",
+	"character_voice_pack":"test1",
 	"display_fps":60,
 	"display_margin_bottom":0,
 	"display_multi_monitors":true,
